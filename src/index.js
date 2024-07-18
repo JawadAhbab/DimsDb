@@ -18,6 +18,12 @@ export const configs = {
     't_addvertisement',
   ],
   mongoUpload: {
+    /* THIS OPERATION IS DESTRUCTIVE */
+    /* ENABLE IT WITH DUE CONCERN */
+    /* GIVEN DATABSE WILL BE DROPPED FIRST */
+    /* NAME A NEW DATABSE IF YOU WANT TO BE SAFE */
     enable: true,
+    url: 'mongodb://localhost:27017',
+    dbname: 'DIMS',
   },
 }
