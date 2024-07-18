@@ -17,4 +17,7 @@ export const configs = {
     'occupation',
     't_addvertisement',
   ],
+  mongoUpload: {
+    enable: true,
+  },
 }

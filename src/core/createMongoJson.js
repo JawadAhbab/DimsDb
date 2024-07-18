@@ -12,7 +12,7 @@ export const createMongoJson = async () => {
 
   for (const table of tables) {
     if (configs.disableTables.includes(table)) {
-      console.log('CREATE'.padEnd(8), ':', table.padEnd(26), ':', '[DISABLED]')
+      console.log('EXPORT'.padEnd(8), ':', table.padEnd(26), ':', '[DISABLED]')
       continue
     }
 
@@ -25,6 +25,6 @@ export const createMongoJson = async () => {
 
     const path = join(mongoJsonFolder, `${table}.json`)
     fs.outputJsonSync(path, data)
-    console.log('CREATE'.padEnd(8), ':', table.padEnd(26), ':', data.length, 'Rows')
+    console.log('EXPORT'.padEnd(8), ':', table.padEnd(26), ':', data.length, 'Rows')
   }
 }
