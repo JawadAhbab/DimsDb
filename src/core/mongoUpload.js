@@ -1,7 +1,8 @@
-import { configs } from '../index.js'
-import { MongoClient } from 'mongodb'
 import fs from 'fs-extra'
+import { MongoClient } from 'mongodb'
 import { join } from 'path'
+import { configs } from '../index.js'
+import { consoler } from './consoler.js'
 import { mongoJsonFolder } from './mongoJsonFolder.js'
 
 export const mongoUpload = async () => {
@@ -19,7 +20,7 @@ export const mongoUpload = async () => {
     const cname = filename.replace(/\.json$/, '')
     const collection = mongodb.collection(cname)
     await collection.insertMany(json)
-    console.log('IMPORT'.padEnd(8), ':', cname.padEnd(26), ':', json.length, 'Rows')
+    consoler('IMPORT', cname, json.length, 'Rows')
   }
 
   await mongo.close()

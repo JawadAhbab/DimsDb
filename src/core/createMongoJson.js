@@ -2,6 +2,7 @@ import fs from 'fs-extra'
 import { join } from 'path'
 import { configs } from '../index.js'
 import { clearMongoJson } from './clearMongoJson.js'
+import { consoler } from './consoler.js'
 import { mongoJsonFolder } from './mongoJsonFolder.js'
 import { tabledata } from './tabledata.js'
 import { tablenames } from './tablenames.js'
@@ -12,7 +13,7 @@ export const createMongoJson = async () => {
 
   for (const table of tables) {
     if (configs.disableTables.includes(table)) {
-      console.log('EXPORT'.padEnd(8), ':', table.padEnd(26), ':', '[DISABLED]')
+      consoler('EXPORT', table, '[DISABLED]')
       continue
     }
 
@@ -25,6 +26,6 @@ export const createMongoJson = async () => {
 
     const path = join(mongoJsonFolder, `${table}.json`)
     fs.outputJsonSync(path, data)
-    console.log('EXPORT'.padEnd(8), ':', table.padEnd(26), ':', data.length, 'Rows')
+    consoler('EXPORT', table, data.length, 'Rows')
   }
 }
