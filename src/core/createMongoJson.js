@@ -20,7 +20,10 @@ export const createMongoJson = async () => {
     const rawdata = await tabledata(table)
     const data = rawdata.map((dataobj) => {
       const obj = {}
-      Object.entries(dataobj).forEach(([key, value]) => (obj[key] = String(value)))
+      Object.entries(dataobj).forEach(([key, value]) => {
+        const number = +value
+        obj[key] = isNaN(number) ? value : number
+      })
       return obj
     })
 
