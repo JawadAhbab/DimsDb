@@ -1,6 +1,6 @@
-import { createMongoJson } from './core/createMongoJson.js'
+import { exec } from './core/exec.js'
 
-createMongoJson()
+exec()
 export const configs = {
   disableTables: [
     'android_metadata',
