@@ -19,5 +19,8 @@ export const mongoUpload = async () => {
     const cname = filename.replace(/\.json$/, '')
     const collection = mongodb.collection(cname)
     await collection.insertMany(json)
+    console.log('IMPORT'.padEnd(8), ':', cname.padEnd(26), ':', json.length, 'Rows')
   }
+
+  await mongo.close()
 }
