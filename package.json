@@ -1,0 +1,15 @@
+{
+  "name": "dimsdb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:JawadAhbab/DimsDb.git",
+  "author": "JawadAhbab <jawad.ahbab.turna@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "create": "node src/index.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
