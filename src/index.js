@@ -22,6 +22,8 @@ export const configs = {
     /* ENABLE IT WITH DUE CONCERN */
     /* GIVEN DATABSE WILL BE DROPPED FIRST */
     /* NAME A NEW DATABSE IF YOU WANT TO BE SAFE */
+    /* THERE MAY BE HUGE AMOUNT OF DATA */
+    /* UPLOADING TO ATLAS MAY CREATE PRESSURE */
     enable: true,
     url: 'mongodb://localhost:27017',
     dbname: 'DIMS',
