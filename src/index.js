@@ -1,8 +1,8 @@
-import { getTables } from './core/getTables.js'
+import { tablenames } from './core/tablenames.js'
 
 makeMongoJson()
 async function makeMongoJson() {
-  const tables = await getTables()
+  const tables = await tablenames()
 
   console.log(tables)
 }
